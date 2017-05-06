@@ -1,0 +1,341 @@
+﻿<!DOCTYPE html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+    <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, target-densitydpi=device-dpi" />
+    <link href="css/themes/2/bookit.min.css" rel="stylesheet" />
+    <link href="css/themes/2/jquery.mobile.icons.min.css" rel="stylesheet" />
+    <link href="lib/jqm/1.4.5/jquery.mobile.structure-1.4.5.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/app.css" />
+    <title>Medical Claim Processing Application</title>
+</head>
+<body>
+    <div data-role="page" id="page-index">
+        <div data-role="header" data-theme="c" data-position="fixed">
+            <h1>MCPA</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <h2 class="mc-text-center">Welcome to medical Claim Processing Application</h2>
+            <p class="mc-top-margin-1-5"><b>Existing Users</b></p>
+            <a href="#page-signin" class="ui-btn ui-btn-b ui-corner-all">Sign In</a>
+            <p class="mc-top-margin-1-5"><b>Don't have an account?</b></p>
+            <a href="#page-signup" class="ui-btn ui-btn-b ui-corner-all">Sign Up</a>
+            <p></p>
+        </div><!-- /content -->
+    </div><!-- /page -->
+    <div data-role="page" id="page-signin">
+        <div data-role="header" data-theme="c" data-position="fixed">
+            <a href="#page-index" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse"></a>
+            <h1>MCPA</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <h3>Sign In</h3>
+            <label for="txt-email">Email Address</label>
+            <input type="text" name="txt-email" id="txt-email" value="">
+            <label for="txt-password">Password</label>
+            <input type="password" name="txt-password" id="txt-password" value="">
+           	<br/>
+            <input type="checkbox" name="chk-keep-signed-in" id="chk-keep-signed-in"><br/>
+            <label for="chck-rememberme">Remember me</label>
+            <div id="ctn-err" class="bi-invisible"></div>
+            <button id="btn-submit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Submit</button>
+            <p class="mc-top-margin-1-5"><b>Don't have an account?</b></p>
+            <a href="#page-signup" class="ui-btn ui-btn-b ui-corner-all">Sign Up</a>
+        </div><!-- /content -->
+    </div><!-- /page -->
+    <div data-role="page" id="page-signup">
+        <div class="bi-header" data-role="header" data-theme="c" data-position="fixed">
+            <a href="#page-index" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse"></a>
+            <h1>MCPA</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <h3>Sign Up</h3>
+            <label for="txt-first-name">First Name</label>
+            <input type="text" name="txt-first-name" id="txt-first-name" value="">
+            <label for="txt-last-name">Last Name</label>
+            <input type="text" name="txt-last-name" id="txt-last-name" value="">
+            <label for="txt-email-address">Email Address</label>
+            <input type="text" name="txt-email-address" id="txt-email-address" value="">
+            <label for="txt-password">Password</label>
+            <input type="password" name="txt-password" id="txt-password" value="">
+            <label for="txt-password-confirm">Confirm Password</label>
+            <input type="password" name="txt-password-confirm" id="txt-password-confirm" value="">
+            <label for="txt-age">Age</label>
+            <input type="number" name="txt-age" id="txt-age" value="">
+            <label for="txt-dob">DOB (yyyy-mm-dd)</label>
+            <input type="text" name="txt-dob" id="txt-dob" value="">
+            <div id="ctn-err" class="bi-invisible"></div>
+            <button id="btn-submit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Submit</button>
+            <p class="mc-top-margin-1-5"><b>Existing Users</b></p>
+            <a href="#page-signin" class="ui-btn ui-btn-b ui-corner-all">Sign In</a>
+        </div><!-- /content -->
+    </div><!-- /page -->
+    <div data-role="page" id="page-signup-succeeded">
+        <div data-role="header" data-theme="c">
+            <h1>MCPA</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <h2 class="mc-text-center">Registration Succeeded</h2>
+            <p class="mc-top-margin-1-5">Congratulations!  You are now registered with Medical Claim Processing Application.</p>
+            <a href="#page-signin" class="ui-btn ui-btn-b ui-corner-all">Sign In</a>
+            <p></p>
+        </div><!-- /content -->
+    </div><!-- /page -->
+    
+   	<div data-role="page" id="page-user">
+        <div data-role="header" data-theme="c" data-position="fixed">
+            <h1>MCPA</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <h3 class="mc-text-center" id="session_name"></h3>
+            <a href="#page-user-details" class="ui-btn ui-btn-b ui-corner-all">Account Details</a>
+            <a href="#page-claim" class="ui-btn ui-btn-b ui-corner-all">Make a new claim</a>
+            <a href="#page-pending-claim" class="ui-btn ui-btn-b ui-corner-all">Pending Claim</a>
+            <a href="#page-completed-claim" class="ui-btn ui-btn-b ui-corner-all">Completed  Claim</a>
+            <button id="logout" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Logout</button>
+        </div><!-- /content -->
+    </div><!-- /page -->
+    
+
+   	<div data-role="page" id="page-user-details">
+        <div data-role="header" data-theme="c" data-position="fixed">
+        	<a href="#page-user" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse"></a>
+            <h1>MCPA</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+        	<h3>Account Details</h3>
+            <label for="txt-first-name">First Name</label>
+            <input type="text" name="txt-first-name" id="fname" value="" disabled>
+            <label for="txt-last-name">Last Name</label>
+            <input type="text" name="txt-last-name" id="lname" value="" disabled>
+            <label for="txt-email-address">Email Address</label>
+            <input type="text" name="txt-email-address" id="emailAddress" value="" disabled>
+            <label for="txt-age">Age</label>
+            <input type="number" name="txt-age" id="age" value="" disabled>
+            <label for="txt-dob">DOB (yyyy-mm-dd)</label>
+            <input type="text" name="txt-dob" id="dob" value="" disabled>
+            <div id="err" class="bi-invisible"></div>
+            <!-- button id="edit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Edit</button> -->
+            <a href="#page-user" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Back</a>
+        </div><!-- /content -->
+    </div><!-- /page -->
+ 
+ <!--  NEW CLAIM -->   
+	<div data-role="page" id="page-claim">
+        <div class="bi-header" data-role="header" data-theme="c" data-position="fixed">
+            <a href="#page-user" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse"></a>
+            <h1>MCPA</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <h3>Add a New Claim</h3>
+            <label for="txt-age">Medical Cost</label>
+            <input type="number" name="txt-medi-cost" id="txt-medi-cost" value="">
+            <label for="txt-age">Surgery Cost</label>
+            <input type="number" name="txt-surgery-cost" id="txt-surgery-cost" value="">
+            <label for="txt-age">Lab Cost</label>
+            <input type="number" name="txt-lab-cost" id="txt-lab-cost" value="">
+            <label for="txt-age">Extra Cost</label>
+            <input type="number" name="txt-ext-cost" id="txt-ext-cost" value=""> 
+            <input type="file" accept="image/*" capture="camera" name="txt-image" id="txt-image"> 
+            <label for="txt-dob">Attach Photo</label>                                  
+            <div id="ctn-err" class="bi-invisible"></div>
+            <button id="btn-submit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Send</button>
+            <a href="#page-user" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Back</a>
+        </div><!-- /content -->
+    </div><!-- /page -->
+    <div data-role="page" id="page-claim-succeeded">
+        <div data-role="header" data-theme="c">
+            <h1>MCPA</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <h2 class="mc-text-center">Acknowledge</h2>
+            <p class="mc-top-margin-1-5">Your claim has been submitted succesfully.</p>
+            <a href="#page-user" class="ui-btn ui-btn-b ui-corner-all">Back</a>
+            <p></p>
+        </div><!-- /content -->
+    </div><!-- /page -->
+
+
+<!-- PENDING CLAIM  -->
+	<div data-role="page" id="page-pending-claim">
+        <div class="bi-header" data-role="header" data-theme="c" data-position="fixed">
+            <a href="#page-user" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse"></a>
+            <h1>MCPA</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+        	<h3>Pending Claims</h3>
+			<div id="pendingClaims">
+			</div>
+			<a href="#page-user" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Back</a>
+        </div><!-- /content -->
+    </div><!-- /page -->
+
+<!-- COMPLETED CLAIM  -->
+	<div data-role="page" id="page-completed-claim">
+        <div class="bi-header" data-role="header" data-theme="c" data-position="fixed">
+            <a href="#page-user" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse"></a>
+            <h1>MCPA</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+        	<h3>Completed Claims</h3>
+			<div id="completedClaims">
+			</div>
+			<a href="#page-user" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Back</a>
+        </div><!-- /content -->
+    </div><!-- /page -->
+    
+   	<div data-role="page" id="page-admin">
+        <div data-role="header" data-theme="c" data-position="fixed">
+            <h1>MCPA</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <h3 class="mc-text-center" id="admin_session_name"></h3>
+            <a href="#page-admin-details" class="ui-btn ui-btn-b ui-corner-all">Account Details</a>
+            <a href="#page-all-pending-claim" class="ui-btn ui-btn-b ui-corner-all">Pending Claim</a>
+            <a href="#page-all-completed-claim" class="ui-btn ui-btn-b ui-corner-all">Completed  Claim</a>
+            <a href="#page-all-users" class="ui-btn ui-btn-b ui-corner-all">User Details</a>
+            <a href="#page-admin-signup" class="ui-btn ui-btn-b ui-corner-all">Add New Admin</a>
+            <a href="#page-search" class="ui-btn ui-btn-b ui-corner-all">Search User</a>
+            <button id="logout-admin" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Logout</button>
+        </div><!-- /content -->
+    </div><!-- /page -->
+ 
+    <div data-role="page" id="page-admin-details">
+        <div data-role="header" data-theme="c" data-position="fixed">
+        	<a href="#page-admin" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse"></a>
+            <h1>MCPA</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+        	<h3>Account Details</h3>
+            <label for="txt-first-name">First Name</label>
+            <input type="text" name="txt-first-name" id="adminfname" value="" disabled>
+            <label for="txt-last-name">Last Name</label>
+            <input type="text" name="txt-last-name" id="adminlname" value="" disabled>
+            <label for="txt-email-address">Email Address</label>
+            <input type="text" name="txt-email-address" id="adminemailAddress" value="" disabled>
+            <label for="txt-age">Age</label>
+            <input type="number" name="txt-age" id="adminage" value="" disabled>
+            <label for="txt-dob">DOB (yyyy-mm-dd)</label>
+            <input type="text" name="txt-dob" id="admindob" value="" disabled>
+            <div id="err" class="bi-invisible"></div>
+            <!--  button id="edit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Edit</button>-->
+            <a href="#page-admin" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Back</a>
+        </div><!-- /content -->
+    </div><!-- /page -->
+
+<!-- PENDING CLAIM  -->
+	<div data-role="page" id="page-all-pending-claim">
+        <div class="bi-header" data-role="header" data-theme="c" data-position="fixed">
+            <a href="#page-admin" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse"></a>
+            <h1>MCPA</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+        	<h3>Pending Claims</h3>
+			<div id="allPendingClaims">
+			</div>
+			<a href="#page-admin" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Back</a>
+        </div><!-- /content -->
+    </div><!-- /page -->
+    
+<!-- COMPLETED CLAIM  -->
+	<div data-role="page" id="page-all-completed-claim">
+        <div class="bi-header" data-role="header" data-theme="c" data-position="fixed">
+            <a href="#page-admin" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse"></a>
+            <h1>MCPA</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+        	<h3>Completed Claims</h3>
+			<div id="allCompletedClaims">
+			</div>
+			<a href="#page-admin" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Back</a>
+        </div><!-- /content -->
+    </div><!-- /page -->     
+ 
+ <!-- All Users  -->
+	<div data-role="page" id="page-all-users">
+        <div class="bi-header" data-role="header" data-theme="c" data-position="fixed">
+            <a href="#page-admin" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse"></a>
+            <h1>MCPA</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+        	<h3>All Users</h3>
+			<div id="allUsers">
+			</div>
+			<a href="#page-admin" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Back</a>
+        </div><!-- /content -->
+    </div><!-- /page -->
+ 
+    <div data-role="page" id="page-admin-signup">
+        <div class="bi-header" data-role="header" data-theme="c" data-position="fixed">
+            <a href="#page-admin" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse"></a>
+            <h1>MCPA</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <h3>Sign Up</h3>
+            <label for="txt-first-name">First Name</label>
+            <input type="text" name="txt-first-name" id="txt-first-name-admin" value="">
+            <label for="txt-last-name">Last Name</label>
+            <input type="text" name="txt-last-name" id="txt-last-name-admin" value="">
+            <label for="txt-email-address">Email Address</label>
+            <input type="text" name="txt-email-address" id="txt-email-address-admin" value="">
+            <label for="txt-password">Password</label>
+            <input type="password" name="txt-password" id="txt-password-admin" value="">
+            <label for="txt-password-confirm">Confirm Password</label>
+            <input type="password" name="txt-password-confirm" id="txt-password-confirm-admin" value="">
+            <label for="txt-age">Age</label>
+            <input type="number" name="txt-age" id="txt-age-admin" value="">
+            <label for="txt-dob">DOB (yyyy-mm-dd)</label>
+            <input type="text" name="txt-dob" id="txt-dob-admin" value="">
+            <div id="ctn-err-admin" class="bi-invisible"></div>
+            <button id="btn-admin-submit" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Submit</button>
+            <a href="#page-admin" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Back</a>
+        </div><!-- /content -->
+    </div><!-- /page -->
+    <div data-role="page" id="page-signup-succeeded-admin">
+        <div data-role="header" data-theme="c">
+            <h1>MCPA</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+            <h2 class="mc-text-center">Admin Registration Succeeded</h2>
+            <p class="mc-top-margin-1-5">Congratulations!  You are now registered with Medical Claim Processing Application as Admin.</p>
+            <a href="#page-admin" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Back</a>
+            <p></p>
+        </div><!-- /content -->
+    </div><!-- /page -->
+
+ <!-- User Search  -->
+	<div data-role="page" id="page-search">
+        <div class="bi-header" data-role="header" data-theme="c" data-position="fixed">
+            <a href="#page-admin" data-icon="home" data-iconpos="notext" data-transition="slide" data-direction="reverse"></a>
+            <h1>MCPA</h1>
+        </div><!-- /header -->
+        <div role="main" class="ui-content">
+        	<h3>Search User</h3>
+        	Search Criteria: User Id, Email, First name and Last name
+			<input type="text" name="txt-search" id="txt-search" value="">
+            <div id="ctn-err-admin" class="bi-invisible"></div>
+            <button id="btn-search" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Search</button>
+            <div id="result" style="display:none;">
+            	<h3>Search Result :</h3>
+            </div>
+            <div id="searchResult" >
+			</div>
+			<a href="#page-admin" class="ui-btn ui-btn-b ui-corner-all mc-top-margin-1-5">Back</a>
+        </div><!-- /content -->
+    </div><!-- /page -->
+                           
+    <script src="lib/fastclick/fastclick.min.js"></script>
+    <script src="lib/jquery/2.1.1/jquery-2.1.1.min.js"></script>
+    <script src="js/api-messages.js"></script>
+    <script src="js/settings.js"></script>
+    <script src="js/signup-controller.js"></script>
+    <script src="js/session.js"></script>
+    <script src="js/signin-controller.js"></script>
+    <script src="js/usermenu-controller.js"></script>
+    <script src="js/adminmenu-controller.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="lib/jqm/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</body>
+</html>
