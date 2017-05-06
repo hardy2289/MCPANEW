@@ -18,8 +18,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="70" column="28" lean-forward="true" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
+            <state relative-caret-position="527">
+              <caret line="74" column="82" lean-forward="false" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="82" />
               <folding />
             </state>
           </provider>
@@ -209,7 +209,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -322,12 +322,12 @@
       <workItem from="1489922271009" duration="611000" />
       <workItem from="1490031944306" duration="4316000" />
       <workItem from="1492185256105" duration="4716000" />
-      <workItem from="1494034492177" duration="290000" />
+      <workItem from="1494034492177" duration="573000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11476000" />
+    <option name="totallyTimeSpent" value="11759000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1378" height="744" extended-state="0" />
@@ -584,8 +584,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="70" column="28" lean-forward="true" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
+        <state relative-caret-position="527">
+          <caret line="74" column="82" lean-forward="false" selection-start-line="74" selection-start-column="12" selection-end-line="74" selection-end-column="82" />
           <folding />
         </state>
       </provider>
